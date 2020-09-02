@@ -10,12 +10,8 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [nominations, setNominations] = useState([]);
 
-  const changeSearchValue = (searchResult) => {
+  const changeSearchValue = async (searchResult) => {
     setSearch(searchResult);
-  };
-
-  const submitSearch = async (event) => {
-    event.preventDefault();
     const movieList = await fetchList(search);
     setSearchResults(movieList);
   };
@@ -24,16 +20,22 @@ function App() {
     setNominations([...nominations, movie]);
   };
 
+  const removeNomation = (imdbID) => {
+    const filteredNominations = nominations.filter((nomination) => {
+      return nomination.imdbID !== imdbID;
+    });
+    setNominations(filteredNominations);
+  };
+
   return (
     <div className="container" data-test="component-app">
       <h1>The Shoppies</h1>
-      <SearchBar
-        changeSearchValue={changeSearchValue}
-        submitSearch={submitSearch}
-      ></SearchBar>
-
+      <SearchBar changeSearchValue={changeSearchValue}></SearchBar>
       <SearchResultList results={searchResults} nominate={nominateMovie} />
-      <NominationList nominations={nominations} />
+      <NominationList
+        nominations={nominations}
+        removeNomination={removeNomation}
+      />
     </div>
   );
 }

@@ -6,8 +6,7 @@ function SearchResultList({ results, nominate }) {
     return (
       <SearchResultItem
         key={id}
-        title={result.Title}
-        year={result.Year}
+        movie={result}
         nominate={nominate}
       ></SearchResultItem>
     );
