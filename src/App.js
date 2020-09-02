@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import SearchBar from "./components/Searchbar";
 import SearchResultList from "./components/SearchResultList";
+import NominationList from "./components/NominationList";
 import { fetchList } from "./api";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       ></SearchBar>
 
       <SearchResultList results={searchResults} nominate={nominateMovie} />
+      <NominationList nominations={nominations} />
     </div>
   );
 }
