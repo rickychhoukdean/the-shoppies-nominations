@@ -19,7 +19,6 @@ function SearchBar({ changeSearchValue, submitSearch }) {
           <input
             type="text"
             name="movie"
-            // value={search}
             onChange={(event) => changeSearchValue(event.target.value)}
           />
         </label>

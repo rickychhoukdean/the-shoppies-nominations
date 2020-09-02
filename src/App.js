@@ -7,6 +7,7 @@ import { fetchList } from "./api";
 function App() {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [nominations, setNominations] = useState([]);
 
   const changeSearchValue = (searchResult) => {
     setSearch(searchResult);
@@ -15,8 +16,11 @@ function App() {
   const submitSearch = async (event) => {
     event.preventDefault();
     const movieList = await fetchList(search);
-    console.log(movieList);
     setSearchResults(movieList);
+  };
+
+  const nominateMovie = (movie) => {
+    setNominations([...nominations, movie]);
   };
 
   return (
@@ -27,7 +31,7 @@ function App() {
         submitSearch={submitSearch}
       ></SearchBar>
 
-      <SearchResultList results={searchResults} />
+      <SearchResultList results={searchResults} nominate={nominateMovie} />
     </div>
   );
 }

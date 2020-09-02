@@ -1,17 +1,19 @@
 import React from "react";
+import SearchResultItem from "./SearchResultItem";
 
-function SearchResultList({ results }) {
+function SearchResultList({ results, nominate }) {
   let res = results.map((result, id) => {
     return (
-      <div key={id}>
-        {result.Title}
-        {result.Year}
-        <button>Test</button>
-      </div>
+      <SearchResultItem
+        key={id}
+        title={result.Title}
+        year={result.Year}
+        nominate={nominate}
+      ></SearchResultItem>
     );
   });
 
-  return <div>{res}</div>;
+  return <>{res}</>;
 }
 
 export default SearchResultList;
