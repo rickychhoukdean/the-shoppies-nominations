@@ -7,7 +7,7 @@ const setup = () => {
   return shallow(<Searchbar />);
 };
 
-test("renders without error", () => {
+test("component renders without error", () => {
   const wrapper = setup();
   const component = findByTestAttr(wrapper, "component-searchbar");
   expect(component.length).toBe(1);
