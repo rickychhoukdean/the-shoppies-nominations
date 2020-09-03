@@ -9,17 +9,15 @@ function SearchResultList({
 }) {
   let res = results.map((result, id) => {
     let picked = false;
-
-    //This part may be slightly inefficient since there is no ELSE but since there is only 5 nominations in the foreach it isnt too ba
     if (nominations.length === 5) {
       picked = true;
+    } else {
+      nominations.forEach((nominated) => {
+        if (nominated.imdbID === result.imdbID) {
+          picked = true;
+        }
+      });
     }
-    nominations.forEach((nominated) => {
-      if (nominated.imdbID === result.imdbID) {
-        picked = "nominated";
-      }
-    });
-
     return (
       <SearchResultItem
         key={id}
