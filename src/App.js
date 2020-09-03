@@ -42,6 +42,7 @@ function App() {
         results={searchResults}
         nominate={nominateMovie}
         nominations={nominations}
+        removeNomination={removeNomation}
       />
       <NominationList
         nominations={nominations}
