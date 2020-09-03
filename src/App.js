@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import SearchBar from "./components/Searchbar";
 import SearchResultList from "./components/SearchResultList";
@@ -16,6 +16,8 @@ function App() {
     setSearchResults(movieList);
   };
 
+  //TODO - ADD USE EFFECT FOR MOVIE LIST
+
   const nominateMovie = (movie) => {
     setNominations([...nominations, movie]);
   };
@@ -27,11 +29,20 @@ function App() {
     setNominations(filteredNominations);
   };
 
+  useEffect(() => {
+    if (nominations.length === 5) {
+    }
+  }, [nominations]);
+
   return (
     <div className="container" data-test="component-app">
       <h1>The Shoppies</h1>
       <SearchBar changeSearchValue={changeSearchValue}></SearchBar>
-      <SearchResultList results={searchResults} nominate={nominateMovie} />
+      <SearchResultList
+        results={searchResults}
+        nominate={nominateMovie}
+        nominations={nominations}
+      />
       <NominationList
         nominations={nominations}
         removeNomination={removeNomation}

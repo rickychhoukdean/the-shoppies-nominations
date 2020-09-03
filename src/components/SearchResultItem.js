@@ -1,11 +1,13 @@
 import React from "react";
 
-function SearchResultItem({ movie, nominate }) {
+function SearchResultItem({ movie, nominate, picked }) {
   return (
     <div>
       {movie.Title}
       {movie.Year}
-      <button onClick={() => nominate(movie)}>Nominate</button>
+      <button disabled={picked} onClick={() => nominate(movie)}>
+        Nominate
+      </button>
     </div>
   );
 }

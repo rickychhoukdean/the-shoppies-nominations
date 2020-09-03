@@ -11,13 +11,13 @@ function NominationList({ nominations, removeNomination }) {
             removeNomination(result.imdbID);
           }}
         >
-          remove
+          Remove
         </button>
       </div>
     );
   });
 
-  return <>{res}</>;
+  return <div className="nomination">{res}</div>;
 }
 
 export default NominationList;
