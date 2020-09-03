@@ -1,23 +1,18 @@
 import React from "react";
+import NominationListItem from "./NominationListItem";
 
 function NominationList({ nominations, removeNomination }) {
   let res = nominations.map((result, id) => {
     return (
-      <div key={id}>
-        {result.Title}
-        {result.Year}
-        <button
-          onClick={() => {
-            removeNomination(result.imdbID);
-          }}
-        >
-          Remove
-        </button>
-      </div>
+      <NominationListItem
+        key={id}
+        result={result}
+        removeNomination={removeNomination}
+      />
     );
   });
 
-  return <div className="nomination">{res}</div>;
+  return <section className="section-nomination">{res}</section>;
 }
 
 export default NominationList;

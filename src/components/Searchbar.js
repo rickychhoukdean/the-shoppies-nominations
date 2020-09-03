@@ -2,18 +2,17 @@ import React from "react";
 
 function SearchBar({ changeSearchValue }) {
   return (
-    <div data-test="component-searchbar">
-      <form>
-        <label>
-          Movie Title:
-          <input
-            type="text"
-            name="movie"
-            onChange={(event) => changeSearchValue(event.target.value)}
-          />
-        </label>
-      </form>
-    </div>
+    <form className="search-form">
+      <label className="search-form__label">
+        Movie Title:
+        <input
+          className="search-form__input"
+          type="text"
+          name="movie"
+          onChange={(event) => changeSearchValue(event.target.value)}
+        />
+      </label>
+    </form>
   );
 }
 

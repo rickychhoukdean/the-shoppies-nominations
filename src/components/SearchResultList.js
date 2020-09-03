@@ -9,7 +9,7 @@ function SearchResultList({
 }) {
   let res = results.map((result, id) => {
     let picked = false;
-    if (nominations.length === 5) {
+    if (nominations.length >= 5) {
       picked = true;
     } else {
       nominations.forEach((nominated) => {
@@ -29,7 +29,7 @@ function SearchResultList({
     );
   });
 
-  return <div className="results">{res}</div>;
+  return <section className="section-result">{res}</section>;
 }
 
 export default SearchResultList;

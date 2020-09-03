@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import SearchBar from "./components/Searchbar";
+import Header from "./components/Header";
 import SearchResultList from "./components/SearchResultList";
 import NominationList from "./components/NominationList";
 import Banner from "./components/Banner";
@@ -35,7 +36,8 @@ function App() {
 
   return (
     <div className="container" data-test="component-app">
-      <h1>The Shoppies</h1>
+      <Header header={"The Shoppies"} />
+      <main>
       <SearchBar changeSearchValue={changeSearchValue}></SearchBar>
       <SearchResultList
         results={searchResults}
@@ -46,8 +48,10 @@ function App() {
         nominations={nominations}
         removeNomination={removeNomation}
       />
-
-      {bannerStatus && <Banner />}
+      {bannerStatus && (
+        <Banner bannerText={"You already have five nominated movies"} />
+      )}
+      </main>
     </div>
   );
 }
