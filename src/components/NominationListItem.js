@@ -2,7 +2,6 @@ import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 
 function NominationListItem({ movie, removeNomination, index }) {
-  console.log(movie.id);
   return (
     <Draggable draggableId={movie.id} index={index}>
       {(provided) => (

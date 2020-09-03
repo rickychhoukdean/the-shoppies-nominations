@@ -12,17 +12,13 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [nominations, setNominations] = useState([]);
   const [bannerStatus, setBannerStatus] = useState(false);
-  const [id, setId] = useState(0);
 
-  const changeSearchValue = async (searchResult) => {
+  const changeSearchValue = (searchResult) => {
     setSearch(searchResult);
-    const movieList = await fetchList(search);
-    setSearchResults(movieList);
   };
 
   const nominateMovie = (movie) => {
-    let movieObj = { id:`id-${id}`, movie };
-    setId(id + 1);
+    let movieObj = { id: movie.imdbID, movie };
     setNominations([...nominations, movieObj]);
   };
 
@@ -32,6 +28,14 @@ function App() {
     });
     setNominations(filteredNominations);
   };
+
+  useEffect(() => {
+    async function searchOMDB() {
+      const movieList = await fetchList(search);
+      setSearchResults(movieList);
+    }
+    searchOMDB();
+  }, [search]);
 
   useEffect(() => {
     nominations.length >= 5 ? setBannerStatus(true) : setBannerStatus(false);
