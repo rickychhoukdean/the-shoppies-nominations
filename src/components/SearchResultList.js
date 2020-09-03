@@ -13,7 +13,7 @@ function SearchResultList({
       picked = true;
     } else {
       nominations.forEach((nominated) => {
-        if (nominated.imdbID === result.imdbID) {
+        if (nominated.movie.imdbID === result.imdbID) {
           picked = true;
         }
       });

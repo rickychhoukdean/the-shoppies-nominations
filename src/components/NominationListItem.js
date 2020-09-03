@@ -1,19 +1,30 @@
 import React from "react";
+import { Draggable } from "react-beautiful-dnd";
 
-function NominationListItem({ result, removeNomination }) {
+function NominationListItem({ movie, removeNomination, index }) {
+  console.log(movie.id);
   return (
-    <div className="nomation__item">
-      {result.Title}
-      {result.Year}
-      <button
-        className="nomination__item__button"
-        onClick={() => {
-          removeNomination(result.imdbID);
-        }}
-      >
-        Remove
-      </button>
-    </div>
+    <Draggable draggableId={movie.id} index={index}>
+      {(provided) => (
+        <div
+          className="nomation__item"
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          {movie.movie.Title}
+          {movie.movie.Year}
+          <button
+            className="nomination__item__button"
+            onClick={() => {
+              removeNomination(movie.movie.imdbID);
+            }}
+          >
+            Remove
+          </button>
+        </div>
+      )}
+    </Draggable>
   );
 }
 
