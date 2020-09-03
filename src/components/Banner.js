@@ -1,9 +1,9 @@
 import React from "react";
 
-function Banner({ bannerText }) {
+function Banner({ banner }) {
   return (
     <div className="banner" data-test="component-Banner">
-      {bannerText}
+      {banner}
     </div>
   );
 }

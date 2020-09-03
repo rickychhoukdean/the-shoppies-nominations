@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="container" data-test="component-app">
-      <Header header={"The Shoppies"} />
+      <Header text={"The Shoppies"} />
       <main>
         <SearchBar changeSearchValue={changeSearchValue}></SearchBar>
         <SearchResultList
@@ -58,7 +58,7 @@ function App() {
         />
 
         {bannerStatus && (
-          <Banner bannerText={"You already have five nominated movies"} />
+          <Banner text={"You already have five nominated movies"} />
         )}
       </main>
     </div>
