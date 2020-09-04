@@ -1,0 +1,59 @@
+.nomation__item:first-of-type {
+    background-color: gold;
+}
+
+
+.nomination {
+    &__item {
+        padding: 1rem;
+        border: 5px solid red;
+
+        &:first-of-type {
+            background-color: gold;
+
+            &::before {
+                content: "1. ";
+            }
+        }
+
+        &:nth-of-type(2) {
+            background-color: silver;
+
+            &::before {
+                content: "2. ";
+            }
+        }
+
+        &:nth-of-type(3) {
+            background-color: brown;
+
+            &::before {
+                content: "3. ";
+            }
+        }
+
+        &:nth-of-type(4) {
+            background-color: white;
+
+            &::before {
+                content: "4. ";
+            }
+        }
+
+        &:nth-of-type(5) {
+            background-color: white;
+
+            &::before {
+                content: "5. ";
+            }
+        }
+
+
+    }
+
+    &__item--background {}
+
+    &__button {
+        float: right;
+    }
+}

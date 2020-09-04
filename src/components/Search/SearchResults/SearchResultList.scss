@@ -1,0 +1,13 @@
+.section-result {
+    background-color: orange;
+
+
+}
+
+.result {
+    &__header {
+        padding: 1rem;
+    }
+
+    &__body {}
+}

@@ -9,8 +9,8 @@ export default {
 
 const Template = (args) => <Header {...args} />;
 
-export const View = Template.bind({});
-View.args = {
+export const Base = Template.bind({});
+Base.args = {
   text: "The Shoppies",
 };
 

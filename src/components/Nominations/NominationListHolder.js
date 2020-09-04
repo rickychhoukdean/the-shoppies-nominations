@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NominationList from "./NominationList";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import "./NominationListHolder.scss";
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -36,19 +37,22 @@ function NominationListHolder({ nominations, removeNomination }) {
   }
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId="list">
-        {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
-            <NominationList
-              nominations={state.nominations}
-              removeNomination={removeNomination}
-            />
-            {provided.placeholder}
-          </div>
-        )}
-      </Droppable>
-    </DragDropContext>
+    <section className="section-nomination">
+      <h2 className="nomination__header">Nominations</h2>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable droppableId="list">
+          {(provided) => (
+            <div className="nomination__body" ref={provided.innerRef} {...provided.droppableProps}>
+              <NominationList
+                nominations={state.nominations}
+                removeNomination={removeNomination}
+              />
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+    </section>
   );
 }
 

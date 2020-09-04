@@ -1,9 +1,10 @@
 import React from "react";
+import "./Banner.scss";
 
-function Banner({ banner }) {
+function Banner({ text }) {
   return (
     <div className="banner" data-test="component-Banner">
-      {banner}
+      {text}
     </div>
   );
 }

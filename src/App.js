@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import SearchBar from "./components/Searchbar";
 import Header from "./components/Header";
-import SearchResultList from "./components/SearchResultList";
 import Banner from "./components/Banner";
+import SearchBar from "./components/Search/Searchbar";
+import SearchResultList from "./components/Search/SearchResults/SearchResultList";
+import NominationListHolder from "./components/Nominations/NominationListHolder";
+import "./App.css";
 import { fetchList } from "./api";
-import NominationListHolder from "./components/NominationListHolder";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -42,26 +42,32 @@ function App() {
   }, [nominations]);
 
   return (
-    <div className="container" data-test="component-app">
+    <>
       <Header text={"The Shoppies"} />
-      <main>
-        <SearchBar changeSearchValue={changeSearchValue}></SearchBar>
-        <SearchResultList
-          results={searchResults}
-          nominate={nominateMovie}
-          nominations={nominations}
-        />
-
-        <NominationListHolder
-          nominations={nominations}
-          removeNomination={removeNomation}
-        />
+      <main className="container parent" data-test="component-app">
+        <div className="div1">
+          <SearchBar changeSearchValue={changeSearchValue} />
+        </div>
+        <div className="div2">
+          <SearchResultList
+            searchTerms={search}
+            results={searchResults}
+            nominate={nominateMovie}
+            nominations={nominations}
+          />
+        </div>
+        <div className="div3">
+          <NominationListHolder
+            nominations={nominations}
+            removeNomination={removeNomation}
+          />
+        </div>
 
         {bannerStatus && (
-          <Banner text={"You already have five nominated movies"} />
+          <Banner text={"You five movies in your nominations!"} />
         )}
       </main>
-    </div>
+    </>
   );
 }
 

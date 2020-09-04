@@ -13,7 +13,7 @@ function NominationList({ nominations, removeNomination }) {
     );
   });
 
-  return <section className="section-nomination">{res}</section>;
+  return <>{res}</>;
 }
 
 export default NominationList;
