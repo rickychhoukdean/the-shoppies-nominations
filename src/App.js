@@ -6,11 +6,13 @@ import SearchResultList from "./components/Search/SearchResults/SearchResultList
 import NominationListHolder from "./components/Nominations/NominationListHolder";
 import "./App.css";
 import { fetchList } from "./api";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [nominations, setNominations] = useState([]);
+  const [localStorage, setLocalStorage] = useLocalStorage("nominations", []);
+  const [nominations, setNominations] = useState(localStorage);
   const [bannerStatus, setBannerStatus] = useState(false);
 
   const changeSearchValue = (searchResult) => {
@@ -20,6 +22,10 @@ function App() {
   const nominateMovie = (movie) => {
     let movieObj = { id: movie.imdbID, movie };
     setNominations([...nominations, movieObj]);
+  };
+
+  const changeNominationOrder = (nomination) => {
+    setLocalStorage(nomination);
   };
 
   const removeNomation = (imdbID) => {
@@ -60,6 +66,7 @@ function App() {
           <NominationListHolder
             nominations={nominations}
             removeNomination={removeNomation}
+            changeNominationOrder={changeNominationOrder}
           />
         </div>
 

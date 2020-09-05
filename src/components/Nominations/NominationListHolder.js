@@ -11,12 +11,20 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-function NominationListHolder({ nominations, removeNomination }) {
+function NominationListHolder({
+  nominations,
+  removeNomination,
+  changeNominationOrder,
+}) {
   const [state, setState] = useState({ nominations });
 
   useEffect(() => {
     setState({ nominations });
   }, [nominations]);
+
+  useEffect(() => {
+    changeNominationOrder(state.nominations);
+  }, [state, changeNominationOrder]);
 
   function onDragEnd(result) {
     if (!result.destination) {
@@ -32,7 +40,6 @@ function NominationListHolder({ nominations, removeNomination }) {
       result.source.index,
       result.destination.index
     );
-
     setState({ nominations });
   }
 
@@ -42,7 +49,11 @@ function NominationListHolder({ nominations, removeNomination }) {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="list">
           {(provided) => (
-            <div className="nomination__body" ref={provided.innerRef} {...provided.droppableProps}>
+            <div
+              className="nomination__body"
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+            >
               <NominationList
                 nominations={state.nominations}
                 removeNomination={removeNomination}
