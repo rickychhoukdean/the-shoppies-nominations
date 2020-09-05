@@ -1,9 +1,16 @@
 .result {
     &__item {
         padding: 1rem;
-        border: 5px solid red;
+        margin-bottom: .5rem;
 
+        &:nth-child(even) {
+            background-color: rgb(246, 246, 246);
+        }
+        &:nth-child(odd) {
+            background-color: rgb(251, 251, 251);
+        }
     }
+
 
 
     &__button {

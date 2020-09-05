@@ -7,8 +7,8 @@ function NominationListItem({ movie, removeNomination, index }) {
     <Draggable draggableId={movie.id} index={index}>
       {(provided) => (
         <div
-          style={{ colsor: `url(${movie.movie.Poster})` }}
-          className="nomination__item"
+        style={{ backgroundImage: `url(${movie.movie.Poster})` }}
+        className="nomination__item"
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

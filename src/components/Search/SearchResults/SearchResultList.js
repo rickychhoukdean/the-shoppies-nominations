@@ -33,7 +33,7 @@ function SearchResultList({
 
   return (
     <section className="section-result ">
-      <h2 className="result__header">Results for "{searchTerms}"</h2>
+      <div className="result__header">Results for <strong>"{searchTerms}"</strong></div>
       <div className="result__body">{res}</div>
     </section>
   );

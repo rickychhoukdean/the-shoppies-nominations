@@ -3,9 +3,19 @@ import "./SearchResultItem.scss";
 
 function SearchResultItem({ movie, nominate, picked }) {
   return (
-    <div className="result__item">
+    <div
+      // style={{ backgroundImage: `url(${movie.Poster})` }}
+      className="result__item"
+    >
       <div className="result__text">
-        {movie.Title} ({movie.Year})
+        <a
+          href={`https://www.imdb.com/title/${movie.imdbID}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {movie.Title}
+        </a>
+        {" "} ({movie.Year})
         <button
           className="result__button"
           disabled={picked}

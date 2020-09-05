@@ -9,7 +9,7 @@ function SearchBar({ changeSearchValue }) {
       </label>
       <i className="search-form__icon fa fa-search"></i>
         <input
-          placeholder="Search"
+          placeholder="Search OMDb"
           className="search-form__input"
           type="text"
           id="movie"
