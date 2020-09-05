@@ -43,9 +43,18 @@ function NominationListHolder({
     setState({ nominations });
   }
 
+  if (nominations.length < 1)
+    return (
+      <div className="nomination-list">
+        <h2>Nominations</h2>
+        <p>No movie has been nominated.</p>
+      </div>
+    );
+
   return (
     <section className="section-nomination">
       <h2 className="nomination__header">Nominations</h2>
+      <div>Please drag to re-order</div>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="list">
           {(provided) => (

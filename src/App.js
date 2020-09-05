@@ -19,13 +19,9 @@ function App() {
     setSearch(searchResult);
   };
 
-  const nominateMovie = (movie) => {
-    let movieObj = { id: movie.imdbID, movie };
+  const addNomination = (movie) => {
+    const movieObj = { id: movie.imdbID, movie };
     setNominations([...nominations, movieObj]);
-  };
-
-  const changeNominationOrder = (nomination) => {
-    setLocalStorage(nomination);
   };
 
   const removeNomation = (imdbID) => {
@@ -33,6 +29,10 @@ function App() {
       return nomination.movie.imdbID !== imdbID;
     });
     setNominations(filteredNominations);
+  };
+
+  const changeNominationOrder = (nomination) => {
+    setLocalStorage(nomination);
   };
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function App() {
 
   return (
     <>
-      <Header text={"The Shoppies"} />
+      <Header text={"Shoppies"} />
       <main className="container parent" data-test="component-app">
         <div className="div1">
           <SearchBar changeSearchValue={changeSearchValue} />
@@ -58,7 +58,7 @@ function App() {
           <SearchResultList
             searchTerms={search}
             results={searchResults}
-            nominate={nominateMovie}
+            nominate={addNomination}
             nominations={nominations}
           />
         </div>
@@ -71,7 +71,7 @@ function App() {
         </div>
 
         {bannerStatus && (
-          <Banner text={"You five movies in your nominations!"} />
+          <Banner text={"Thank you for nominating five movies!"} />
         )}
       </main>
     </>

@@ -31,9 +31,24 @@ function SearchResultList({
     );
   });
 
+  if (searchTerms.length < 1) {
+    return (
+      <section className="section-result ">
+        <div className="result__header">
+        Please search for a movie!
+        </div>
+
+        <div className="result__body"></div>
+      </section>
+    );
+  }
+
   return (
     <section className="section-result ">
-      <div className="result__header">Results for <strong>"{searchTerms}"</strong></div>
+      <div className="result__header">
+        Results for <strong>"{searchTerms}"</strong>
+      </div>
+
       <div className="result__body">{res}</div>
     </section>
   );

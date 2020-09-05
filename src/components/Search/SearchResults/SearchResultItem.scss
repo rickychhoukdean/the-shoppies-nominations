@@ -1,19 +1,38 @@
 .result {
     &__item {
-        padding: 1rem;
+        position: relative;
+        padding: 1.5rem;
         margin-bottom: .5rem;
 
         &:nth-child(even) {
             background-color: rgb(246, 246, 246);
         }
+
         &:nth-child(odd) {
             background-color: rgb(251, 251, 251);
         }
     }
 
+    &__text {
+        padding-left: 3.5rem;
+        width: 60%;
+    }
 
 
-    &__button {
-        float: right;
+
+    &__button--center {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__picture {
+        position: absolute;
+        height: 100%;
+        width: 4rem;
+        top: 0;
+        left: 5px;
+        bottom: 0;
     }
 }

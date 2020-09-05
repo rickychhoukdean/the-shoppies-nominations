@@ -5,11 +5,39 @@
 
 .nomination {
     &__item {
-        padding: 1rem;
-        border: 5px solid red;
+        position: relative;
+        padding: 1.5rem;
+        margin-bottom: .5rem;
+
+
 
         &:first-of-type {
-            background-color: gold;
+            background-color: #C9B037;
+        }
+
+        &:nth-of-type(2) {
+            background-color: #D7D7D7;
+        }
+
+        &:nth-of-type(3) {
+            background-color: #AD8A56;
+        }
+
+        &:nth-of-type(4) {
+            background-color: grey;
+        }
+
+        &:nth-of-type(5) {
+            background-color: grey;
+
+        }
+    }
+
+    &__text {
+        padding-left: 3rem;
+        width: 70%;
+
+        &:first-of-type {
 
             &::before {
                 content: "1. ";
@@ -17,15 +45,14 @@
         }
 
         &:nth-of-type(2) {
-            background-color: silver;
 
             &::before {
+
                 content: "2. ";
             }
         }
 
         &:nth-of-type(3) {
-            background-color: brown;
 
             &::before {
                 content: "3. ";
@@ -33,7 +60,6 @@
         }
 
         &:nth-of-type(4) {
-            background-color: white;
 
             &::before {
                 content: "4. ";
@@ -41,7 +67,6 @@
         }
 
         &:nth-of-type(5) {
-            background-color: white;
 
             &::before {
                 content: "5. ";
@@ -49,9 +74,21 @@
         }
     }
 
+    &__picture {
+        position: absolute;
+        height: 100%;
+        width: 4rem;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
     &__item--background {}
 
-    &__button {
-        float: right;
+    &__button--center {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
