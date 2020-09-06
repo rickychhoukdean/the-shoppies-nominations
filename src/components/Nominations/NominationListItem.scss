@@ -2,76 +2,64 @@
     background-color: gold;
 }
 
-
 .nomination {
     &__item {
         position: relative;
         padding: 1.5rem;
         margin-bottom: .5rem;
 
-
-
         &:first-of-type {
             background-color: #C9B037;
+
+            .nomination__text {
+                &::before {
+                    content: "1. ";
+                }
+            }
         }
 
         &:nth-of-type(2) {
             background-color: #D7D7D7;
+
+            .nomination__text {
+                &::before {
+                    content: "2. ";
+                }
+            }
         }
 
         &:nth-of-type(3) {
             background-color: #AD8A56;
+            .nomination__text {
+                &::before {
+                    content: "3. ";
+                }
+            }
         }
 
         &:nth-of-type(4) {
             background-color: grey;
+            .nomination__text {
+                &::before {
+                    content: "4. ";
+                }
+            }
         }
 
         &:nth-of-type(5) {
             background-color: grey;
-
+            .nomination__text {
+                &::before {
+                    content: "5. ";
+                }
+            }
         }
     }
+
 
     &__text {
         padding-left: 3rem;
         width: 70%;
-
-        &:first-of-type {
-
-            &::before {
-                content: "1. ";
-            }
-        }
-
-        &:nth-of-type(2) {
-
-            &::before {
-
-                content: "2. ";
-            }
-        }
-
-        &:nth-of-type(3) {
-
-            &::before {
-                content: "3. ";
-            }
-        }
-
-        &:nth-of-type(4) {
-
-            &::before {
-                content: "4. ";
-            }
-        }
-
-        &:nth-of-type(5) {
-
-            &::before {
-                content: "5. ";
-            }
-        }
     }
 
     &__picture {
@@ -82,8 +70,6 @@
         left: 0;
         bottom: 0;
     }
-
-    &__item--background {}
 
     &__button--center {
         position: absolute;

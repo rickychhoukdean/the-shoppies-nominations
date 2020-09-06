@@ -4,7 +4,7 @@ import Banner from "./components/Banner";
 import SearchBar from "./components/Search/Searchbar";
 import SearchResultList from "./components/Search/SearchResults/SearchResultList";
 import NominationListHolder from "./components/Nominations/NominationListHolder";
-import "./App.css";
+import "./App.scss";
 import { fetchList } from "./api";
 import useLocalStorage from "./hooks/useLocalStorage";
 
@@ -49,8 +49,11 @@ function App() {
 
   return (
     <>
-      <Header text={"Shoppies"} />
+      <Header text={"The Shoppies"} />
       <main className="container parent" data-test="component-app">
+        {bannerStatus && (
+          <Banner text={"You have nominated five movies!"} />
+        )}
         <div className="div1">
           <SearchBar changeSearchValue={changeSearchValue} />
         </div>
@@ -69,10 +72,6 @@ function App() {
             changeNominationOrder={changeNominationOrder}
           />
         </div>
-
-        {bannerStatus && (
-          <Banner text={"Thank you for nominating five movies!"} />
-        )}
       </main>
     </>
   );

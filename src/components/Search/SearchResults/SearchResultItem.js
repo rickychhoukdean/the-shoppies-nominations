@@ -22,11 +22,11 @@ function SearchResultItem({ movie, nominate, picked }) {
         ({movie.Year})
         </div>
         <button
-          className="result__button result__button--center "
+          className="button result__button result__button--center "
           disabled={picked}
           onClick={() => nominate(movie)}
         >
-          Nominate
+            Nominate
         </button>
     </div>
   );

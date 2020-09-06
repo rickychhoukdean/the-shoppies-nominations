@@ -34,10 +34,8 @@ function SearchResultList({
   if (searchTerms.length < 1) {
     return (
       <section className="section-result ">
-        <div className="result__header">
-        Please search for a movie!
-        </div>
-
+        <h2 className="result__header">Search Results</h2>
+        <div className="result__sub-header">Please search for a movie!</div>
         <div className="result__body"></div>
       </section>
     );
@@ -45,7 +43,9 @@ function SearchResultList({
 
   return (
     <section className="section-result ">
-      <div className="result__header">
+      <h2 className="result__header">Search Results</h2>
+
+      <div className="result__sub-header">
         Results for <strong>"{searchTerms}"</strong>
       </div>
 

@@ -17,10 +17,11 @@ In terminal type
 
 It was recommended to add one or two extra features so I decided on the following:
 
-1. Have the user be able to rank their nominations with drag and drop functionality
+1. Have the user be able to rank their nominations with drag and drop functionality via react-dnd
 2. Save nomination lists if the user leaves the page by using local storage
+3. It is responsive (it was easy to do this using SCSS variables and css grid system)
 
-I found these two to be very important in terms of functionality for the app to see which movie deserve to be awarded. With these two features we can easily push the nomination data to a database and create a simple ranking system
+I found these two to be very important in terms of functionality for the app to see which movie deserve to be awarded. With these two features we can easily push the nomination data to a database and create a simple ranking system.
 
 ## Things to add
 

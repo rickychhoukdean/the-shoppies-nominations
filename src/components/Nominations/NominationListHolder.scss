@@ -1,6 +1,53 @@
+@import '../../variables';
+
+
 .section-nomination {
-    background-color: rebeccapurple;
-    height: 90%;
+    background-color: $color-black;
+    height: 85%;
     border-radius: 10px;
+
+}
+
+.nomination {
+    &__header {
+        padding: 1rem;
+        color: $color-white;
+        font-weight: bolder;
+        font-size: $large-header-font-size;
+
+    }
+
+    &__placeholder {
+        background-image: url("trophy.png");
+        color: white;
+        filter: brightness(0) invert(1);
+
+    }
+
+    &__sub-header {
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        color: $color-white-2;
+        font-weight: bold;
+        font-size: $default-font-size;
+
+    }
+
+    &__body {
+        overflow-y: scroll;
+        height: 80%
+    }
+}
+
+@media (max-width: 600px) {
+    .section-nomination {
+        margin-bottom: 4rem;
+    }
+
+    .nomination__body {
+        padding-bottom: 2rem;
+
+        overflow-y: unset;
+    }
 
 }
