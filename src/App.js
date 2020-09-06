@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Banner from "./components/Banner";
+import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
 import SearchBar from "./components/Search/Searchbar";
 import SearchResultList from "./components/Search/SearchResults/SearchResultList";
 import NominationListHolder from "./components/Nominations/NominationListHolder";
@@ -11,7 +11,9 @@ import useLocalStorage from "./hooks/useLocalStorage";
 function App() {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  //Custom hook to store nominations in local storage
   const [localStorage, setLocalStorage] = useLocalStorage("nominations", []);
+  //Checks if local storage has nomination data else it will just start as an empty array
   const [nominations, setNominations] = useState(localStorage);
   const [bannerStatus, setBannerStatus] = useState(false);
 

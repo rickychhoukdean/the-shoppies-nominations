@@ -12,6 +12,7 @@ In terminal type
 3. `npm i`
 4. `npm start`
 5. The website should be now running on http://localhost:3000/ or whichever port is open
+6. You can also check the components by running `npm run storybook`
 
 ## Extra features
 
@@ -25,6 +26,6 @@ I found these two to be very important in terms of functionality for the app to 
 
 ## Things to add
 
-1. Responsive design.
-2. Submit the nominated movies to a database and complete a ranking system
-3. The API only queries page 1 by default so add Pagination to the search results
+1. Submit the nominated movies to a database and complete a ranking system
+2. The API only queries page 1 by default so add Pagination to the search results
+3. Unit testing

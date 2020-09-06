@@ -4,7 +4,7 @@
     background-color: $color-black;
     height: 85%;
     border-radius: 10px;
-
+    position: relative;
 }
 
 .result {
@@ -27,7 +27,7 @@
 
     &__body {
         overflow-y: scroll;
-        height: 80%
+        height: 80%;
     }
 }
 

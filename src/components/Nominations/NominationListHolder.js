@@ -3,6 +3,7 @@ import NominationList from "./NominationList";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import "./NominationListHolder.scss";
 
+//Helper function for reordering lists
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
@@ -26,6 +27,7 @@ function NominationListHolder({
     changeNominationOrder(state.nominations);
   }, [state, changeNominationOrder]);
 
+  //Once the drag ends state is updated with new oorder
   function onDragEnd(result) {
     if (!result.destination) {
       return;

@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../../variables';
 
 .banner {
     background-color: $color-black;
@@ -11,8 +11,6 @@
     color: $color-white;
     padding: 1rem;
 }
-
-
 
 @media (max-width: 600px) {
     .banner {
