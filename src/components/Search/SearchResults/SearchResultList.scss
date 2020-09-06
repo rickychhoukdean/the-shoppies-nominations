@@ -13,6 +13,8 @@
         color: $color-white;
         font-weight: bolder;
         font-size: $large-header-font-size;
+        text-decoration: underline;
+        text-decoration-color: $color-primary;
     }
 
     &__sub-header {

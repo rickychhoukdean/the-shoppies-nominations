@@ -14,6 +14,8 @@
         color: $color-white;
         font-weight: bolder;
         font-size: $large-header-font-size;
+        text-decoration: underline;
+        text-decoration-color: $color-primary;
 
     }
 
@@ -21,7 +23,6 @@
         background-image: url("trophy.png");
         color: white;
         filter: brightness(0) invert(1);
-
     }
 
     &__sub-header {
@@ -30,7 +31,6 @@
         color: $color-white-2;
         font-weight: bold;
         font-size: $default-font-size;
-
     }
 
     &__body {

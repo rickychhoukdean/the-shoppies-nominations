@@ -29,7 +29,7 @@ function NominationListItem({ movie, removeNomination, index }) {
             </a>{" "}
             ({movie.movie.Year})
             <button
-              className="nomination__button nomination__button--center"
+              className="nomination__button nomination__button--center button"
               onClick={() => {
                 removeNomination(movie.movie.imdbID);
               }}
